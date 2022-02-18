@@ -1,0 +1,64 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class DestinationSource {
+
+	static Map<Character, Character> normalMap = new HashMap<>();
+	static char intermediate = 'M';
+	static char source = ' ';
+
+	public static void main(String args[]) {
+
+		normalMap.put('M', 'H');
+		normalMap.put('G', 'C');
+		normalMap.put('D', 'M');
+		normalMap.put('H', 'G');
+
+		System.out.println("For M");
+		intermediate = 'M';
+		methodCall();
+		System.out.println("For G");
+		intermediate = 'G';
+		methodCall();
+		System.out.println("For D");
+		intermediate = 'D';
+		methodCall();
+		System.out.println("For H");
+		intermediate = 'H';
+		methodCall();
+
+	}
+
+	static void methodCall() {
+		source = ' ';
+		System.out.println("Initial intermediate " + intermediate);
+
+		if (normalMap.containsKey(intermediate)) {
+
+			source = intermediate;
+			intermediate = normalMap.get(source);
+			System.out.printf("current source + Destin %s %s \n", source, intermediate);
+		}
+
+		if (normalMap.containsKey(intermediate)) {
+
+			source = intermediate;
+			intermediate = normalMap.get(source);
+			System.out.printf("current source + Destin %s %s \n", source, intermediate);
+		}
+
+		if (normalMap.containsKey(intermediate)) {
+
+			source = intermediate;
+			intermediate = normalMap.get(source);
+			System.out.printf("current source + Destin %s %s \n", source, intermediate);
+		}
+
+		if (normalMap.containsKey(intermediate)) {
+
+			source = intermediate;
+			intermediate = normalMap.get(source);
+			System.out.printf("current source + Destin %s %s \n", source, intermediate);
+		}
+	}
+}
